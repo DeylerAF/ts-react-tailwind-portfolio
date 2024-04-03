@@ -10,8 +10,6 @@ import Card from "./Card";
 
 import { HiArrowRight, HiArrowLeft } from "react-icons/hi";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 interface ArrowProps {
     onClick: () => void;
@@ -21,7 +19,7 @@ const SampleNextArrow = (props: ArrowProps) => {
     const { onClick } = props;
     return (
         <div
-            className="w-14 h-12 bg-[#0c1821] hover:bg-black duration-300 rounded-md text-2xl text-gray-400 flex justify-center items-center absolute bottom-0 right-0 shadow-shadowOne cursor-pointer z-10"
+            className="w-14 h-12 bg-[#0c1821] hover:bg-black duration-300 rounded-md text-2xl text-gray-400 flex justify-center items-center absolute -bottom-16 right-0 shadow-shadowOne cursor-pointer z-10"
             onClick={onClick}
         >
             <HiArrowRight />
@@ -33,7 +31,7 @@ const SamplePrevArrow = (props: ArrowProps) => {
     const { onClick } = props;
     return (
         <div
-            className="w-14 h-12 bg-[#0c1821] hover:bg-black duration-300 rounded-md text-2xl text-gray-400 flex justify-center items-center absolute bottom-0 left-0 shadow-shadowOne cursor-pointer z-10"
+            className="w-14 h-12 bg-[#0c1821] hover:bg-black duration-300 rounded-md text-2xl text-gray-400 flex justify-center items-center absolute -bottom-16 left-0 shadow-shadowOne cursor-pointer z-10"
             onClick={onClick}
         >
             <HiArrowLeft />
@@ -46,7 +44,7 @@ const Features = () => {
     const settings = {
         dots: true,
         infinite: true,
-        autoplay: true,
+        autoplay: false,
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -63,7 +61,7 @@ const Features = () => {
                 },
             },
             {
-                breakpoint: 600,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
@@ -87,6 +85,11 @@ const Features = () => {
             <div
                 className="slick-dots"
                 style={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    position: "absolute",
                     bottom: "-50px",
                 }}
             >
@@ -106,18 +109,20 @@ const Features = () => {
                 style={
                     i === dotActive
                         ? {
-                              width: "12px",
-                              height: "12px",
+                              width: "8px",
+                              height: "8px",
                               background: "#009900",
                               borderRadius: "50%",
                               cursor: "pointer",
+                              margin: ".25em",
                           }
                         : {
-                              width: "12px",
-                              height: "12px",
+                              width: "8px",
+                              height: "8px",
                               background: "gray",
                               borderRadius: "50%",
                               cursor: "pointer",
+                              margin: ".25em",
                           }
                 }
             ></div>

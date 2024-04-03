@@ -3,5 +3,13 @@
 		{
 			"path": "."
 		}
-	]
+	],
+    "extensions": {
+        "recommendations": [
+            "esbenp.prettier-vscode",
+            "stylelint.vscode-stylelint",
+            "tailwindcss.intellisense",
+            "naumovs.color-highlight"
+        ]
+    }
 }
