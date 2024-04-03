@@ -11,11 +11,7 @@ import Card from "./Card";
 import { HiArrowRight, HiArrowLeft } from "react-icons/hi";
 import Slider from "react-slick";
 
-interface ArrowProps {
-    onClick: () => void;
-}
-
-const SampleNextArrow = (props: ArrowProps) => {
+const SampleNextArrow = (props) => {
     const { onClick } = props;
     return (
         <div
@@ -27,7 +23,7 @@ const SampleNextArrow = (props: ArrowProps) => {
     );
 };
 
-const SamplePrevArrow = (props: ArrowProps) => {
+const SamplePrevArrow = (props) => {
     const { onClick } = props;
     return (
         <div
@@ -44,8 +40,8 @@ const Features = () => {
     const settings = {
         dots: true,
         infinite: true,
-        autoplay: false,
-        speed: 500,
+        autoplay: true,
+        speed: 1000,
         slidesToShow: 4,
         slidesToScroll: 1,
         initialSlide: 0,
@@ -55,21 +51,17 @@ const Features = () => {
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1,
-                    infinite: true,
-                    autoplay: true,
-                    dots: true,
                 },
             },
             {
-                breakpoint: 768,
+                breakpoint: 820,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    initialSlide: 2,
                 },
             },
             {
-                breakpoint: 480,
+                breakpoint: 540,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
